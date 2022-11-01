@@ -2,7 +2,7 @@ package org.launchcode.hellospring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-// initial commit
+// static responses
 @SpringBootApplication
 public class HelloSpringApplication {
 
