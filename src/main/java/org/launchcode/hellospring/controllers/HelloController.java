@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
+@ResponseBody
+@RequestMapping("hello")
 public class HelloController {
 
     // Handles GetMapping request at path /hello
@@ -15,29 +17,26 @@ public class HelloController {
 //        return "Hello, Spring!";
 //    }
 
-    // Handles GetMapping request at path /goodbye
+    // Lives at /hello/goodbye
     @GetMapping("goodbye")
-    @ResponseBody
     public String goodbye() {
         return "Goodbye, Spring!";
     }
 
-    // Handles requests of the form /hello?name=LaunchCode
-    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hello")
-    @ResponseBody
+    // Lives at /hello/hello
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
     public String helloWithQueryParam(@RequestParam String name) {
         return "Hello, " + name + "!";
     }
 
     // Handles requests of the form /hello/LaunchCode
     @GetMapping("hello/{name}")
-    @ResponseBody
     public String helloWithPathParam(@PathVariable String name) {
       return "Hello, " + name + "!";
     }
 
-    @GetMapping("form")
-    @ResponseBody
+
+    // Lives at hello/form
     public String helloForm() {
         return "<html>" +
                 "<body>" +
