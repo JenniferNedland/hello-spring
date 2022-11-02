@@ -2,7 +2,7 @@ package org.launchcode.hellospring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-// static responses
+// query parameters branch
 @SpringBootApplication
 public class HelloSpringApplication {
 
