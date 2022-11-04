@@ -30,15 +30,16 @@ public class HelloController {
     }
 
     // Handles requests of the form /hello/LaunchCode
-    @GetMapping("hello/{name}")
+    @GetMapping("{name}")
     public String helloWithPathParam(@PathVariable String name) {
       return "Hello, " + name + "!";
     }
 
 
     // Lives at hello/form
+    @GetMapping("form")
     public String helloForm() {
-        return "<html>" +
+        return  "<html>" +
                 "<body>" +
                 "<form action='hello' method='post'>" +
                 "<input type='text' name='name'>" +
